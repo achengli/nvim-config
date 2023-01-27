@@ -15,10 +15,7 @@ local vimcompletions = {}
 ---@return boolean b (true when is a valid version)
 ---@see vim.version()
 vimcompletions.has = function (ver)
-    if vim.version().major >= ver then 
-        return true
-    end
-    return false
+    return vim.version().major >= ver 
 end
 
 return vimcompletions
