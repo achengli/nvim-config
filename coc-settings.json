@@ -1,0 +1,28 @@
+{
+    "languageserver" : {
+        "lua": {
+            "command" : "/home/muyahid/.local/share/lua-language-server/bin/lua-language-server",
+            "args": [
+                "-E",
+                "/home/muyahid/.local/share/lua-language-server/bin/main.lua"
+            ],
+            "filetypes": ["lua"],
+            "settings": {
+                "Lua": {
+                    "workspace.library": {
+                        "/usr/share/nvim/runtime/lua": true,
+                        "/usr/share/nvim/runtime/lua/vim": true,
+                        "/usr/share/nvim/runtime/lua/vim/lsp": true,
+                        "/usr/share/lua/5.3": true,
+                        "/usr/share/lua/5.3/cjson": true
+                    },
+                    "diagnostics": {
+                        "globals": ["vim"]
+                    }
+                }
+            }
+        }
+    },
+    "sumneko-lua.enableNvimLuaDev": true
+}
+
