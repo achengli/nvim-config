@@ -64,8 +64,8 @@ local function toggle_transparent_background()
 end
 
 -- change background color to transparent background by default and select the theme
-vim.api.nvim_exec('color github_dark',false)
-vim.api.nvim_exec('color nightfly',false)
+vim.api.nvim_exec('silent! color github_dark',false)
+vim.api.nvim_exec('silent! color nightfly',false)
 toggle_transparent_background()
 
 vim.keymap.set('n','<C-x><C-t>',toggle_transparent_background, {silent = true})
