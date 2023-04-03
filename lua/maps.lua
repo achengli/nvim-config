@@ -44,27 +44,27 @@ end, {silent = true})
 
 
 -- Configuring toggle transparency in vim
-vim.t.is_transparent = 1
+vim.t.is_transparent = false
 local function toggle_transparent_background()
-    if vim.t.is_transparent == 0 then
+    if vim.t.is_transparent then
         if vim.has(7) then
             vim.api.nvim_set_hl(0,'Normal',{ctermbg = 'black', bg='black'})
         else
-            vim.cmd([[highlight Normal guibg=#000000 ctermbg=black]])
+            --vim.cmd([[highlight Normal guibg=#000000 ctermbg=black]])
+            vim.api.nvim_exec('silent! colorscheme ' .. vim.api.nvim_exec('silent! colorscheme',false),false)
         end
-        vim.t.is_transparent = 1
+        vim.t.is_transparent = false
     else
         if vim.has(7) then
             vim.api.nvim_set_hl(0,'Normal',{ctermbg = 'NONE', bg='NONE'})
         else
             vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
         end
-        vim.t.is_transparent = 0
+        vim.t.is_transparent = true
     end
 end
 
 -- change background color to transparent background by default and select the theme
-vim.api.nvim_exec('silent! color github_dark',false)
 vim.api.nvim_exec('silent! color nightfly',false)
 toggle_transparent_background()
 
@@ -73,4 +73,14 @@ vim.keymap.set('n','<C-l>', function ()
     vim.api.nvim_exec(':NERDTreeToggle',false)
 end)
 
+vim.keymap.set('n','<A-h>','<C-W>H',{})
+vim.keymap.set('n','<A-j>','<C-W>J',{})
+vim.keymap.set('n','<A-k>','<C-W>K',{})
+vim.keymap.set('n','<A-l>','<C-W>L',{})
 
+vim.keymap.set('n','<A-left>','<C-W>h',{})
+vim.keymap.set('n','<A-down>','<C-W>j',{})
+vim.keymap.set('n','<A-up>','<C-W>k',{})
+vim.keymap.set('n','<A-right>','<C-W>l',{})
+
+vim.keymap.set('i','<C-BS>','<C-w>',{})

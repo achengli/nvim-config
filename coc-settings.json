@@ -1,7 +1,9 @@
 {
     "languageserver" : {
         "lua": {
-            "command" : "/usr/local/bin/lua-lsp", 
+            "command": "/home/tao/.config/coc/extensions/coc-sumneko-lua-data/sumneko-lua-ls/extension/server/bin/lua-language-server",
+            "args" : ["-E",
+                "/home/tao/.config/coc/extensions/coc-sumneko-lua-data/sumneko-lua-ls/extension/server/bin/main.lua"],
             "filetypes": ["lua"],
             "settings": {
                 "Lua": {
@@ -12,13 +14,21 @@
                         "/usr/share/lua/5.3": true,
                         "/usr/share/lua/5.3/cjson": true,
                         "/usr/local/share/luakit/lib": true,
+                        "/home/tao/.luarocks/share/lua/5.3": true,
                     },
+                    "workspace.checkThirdParty": false,
                     "diagnostics": {
                         "globals": ["vim"]
                     }
                 }
             }
+        },
+        "vimlsp": {
+            "indexes": {
+                "projectRootPatterns": [".git","autoload",".github","plugin"]
+            }
         }
-    }
+    },
+    "sumneko-lua.enableNvimLuaDev": true
 }
 

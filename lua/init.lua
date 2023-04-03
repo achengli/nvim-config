@@ -1,4 +1,20 @@
--- Lua configuration for neovim 
+--- Require path file avoiding errors
+--- --
+--- @param path string
+--- @param message? string
+--- @return boolean | any # false if error, result value if true
+local function require_secure(path,message)
+    local ok,res = pcall(require,path)
+    if not ok then
+        if message then print(message) end
+        return ok
+    end
+    return nil or res
+end
+require_secure('config','error config')
+require_secure('plugins','error plugins')
+require_secure('maps','error loading maps')-- Lua configuration for neovim 
+
 -- golang auto format 
 vim.api.nvim_create_autocmd("BufWrite",{
     pattern = '*.go',
@@ -34,5 +50,3 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.b.comment_leader = '# '
     end
 })
-
-
