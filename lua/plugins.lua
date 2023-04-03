@@ -40,4 +40,6 @@ return require('packer').startup( function (use)
     use 'jose-elias-alvarez/null-ls.nvim'                              -- dependency for eslint
     use 'neovim/nvim-lspconfig'                                        -- dependency for null-ls
     use 'MunifTanjim/eslint.nvim'
+    use 'MunifTanjim/nui.nvim'
+    use 'dpayne/CodeGPT.nvim'
 end)
