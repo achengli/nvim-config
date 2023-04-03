@@ -13,5 +13,6 @@ This is my **neovim** working station that I'm using for software and notes.
 - NERDTree file manager [NERDTree](https://github.com/preservim/nerdtree)
 ---
 ## Snapshot
-![neovim alacritty](screenshot.png)
+![neovim alacritty](neovim_file.png)
+![neovim alacritty](neovim_telescope.png)
 
