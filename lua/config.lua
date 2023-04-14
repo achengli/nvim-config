@@ -43,9 +43,15 @@ end})
 
 local twig_ft = vim.api.nvim_create_augroup('twig_ft',{clear = false})
 vim.api.nvim_create_autocmd({'BufNewFile','BufRead'},{pattern={'*.mac'},
-callback = function ()
+    callback = function ()
         vim.opt.syntax = 'maxima'
         vim.opt.filetype = 'maxima'
+    end})
+
+vim.api.nvim_create_autocmd({'BufNewFile','BufRead'},{pattern={'*.m'},
+    callback = function ()
+        vim.opt.syntax = 'octave'
+        vim.opt.filetype = 'octave'
     end})
 
 vim.g.mapleader = ','

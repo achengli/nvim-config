@@ -26,7 +26,7 @@ vim.g.NERDTreeShowHidden = 1
 -- Rotate between buffers using Alt-tab to rotate right and Shift-tab 
 -- to rotate left.
 vim.keymap.set('n','<A-tab>', function ()
-    vim.api.nvim_exec([[
+    vim.cmd([[
     if &modifiable && !&readonly && &modified
         write
     endif
@@ -34,7 +34,7 @@ vim.keymap.set('n','<A-tab>', function ()
 end, {silent = true})
 
 vim.keymap.set('n','<S-tab>', function ()
-    vim.api.nvim_exec([[
+    vim.cmd([[
     if &modifiable && !&readonly && &modified
         write
     endif

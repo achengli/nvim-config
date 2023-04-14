@@ -24,7 +24,13 @@ return require('packer').startup( function (use)
     use 'mattn/emmet-vim'                                              -- emmet neovim for hmtl completion
     use '89453728/maximaeval'                                          -- maxima dynamic buffer evaluation
     use 'nvim-treesitter/nvim-treesitter'                              -- treesitter (autocompletion)
-    use 'puremourning/vimspector'                                      -- debugger vimspector
+    use {'puremourning/vimspector',                                    -- debugger vimspector
+        cmd = {'VimspectorInstall','VimspectorUpdate'},fn = {'vimspector#Launch()',
+            'vimspector#ToggleBreakpoint',config = function()
+                require('config.vimspector').setup()
+            end,}
+    }
+    use {'sagi-z/vimspectorpy', { fn= {"vimspectorpy#update()"}}}
 
     -- Coc neovim
     use {'neoclide/coc.nvim', branch = 'release'}                     -- coc neovim lsp servers
@@ -42,4 +48,5 @@ return require('packer').startup( function (use)
     use 'MunifTanjim/eslint.nvim'
     use 'MunifTanjim/nui.nvim'
     use 'dpayne/CodeGPT.nvim'
+    use 'tranvansang/octave.vim'                                       -- neovim octave syntax
 end)
