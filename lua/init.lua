@@ -16,14 +16,6 @@ require_secure('plugins','error plugins')
 require_secure('maps','error loading maps')-- Lua configuration for neovim 
 require_secure('startup', 'Startup file raise an error')
 
--- golang auto format 
-vim.api.nvim_create_autocmd("BufWrite",{
-    pattern = '*.go',
-    callback = function (args)
-        os.execute("/usr/bin/gofmt " .. args.buf)
-    end}
-)
-
 -- keymaps 
 require('maps')
 
