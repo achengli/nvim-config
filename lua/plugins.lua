@@ -1,7 +1,13 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup( function (use)
+    use 'wbthomason/packer.nvim'
+
     -- themes and colorizing neovim
+    use 'flazz/vim-colorschemes'
+    use 'mhartington/oceanic-next'
+    use 'cseelus/vim-colors-lanai'                                     -- light colorscheme
+    use 'cocopon/iceberg.vim'                                          -- iceberg theme
     use 'kyazdani42/nvim-web-devicons'
     use 'EdenEast/nightfox.nvim'
     use 'bluz71/vim-nightfly-colors'                                   -- nightfly theme 
@@ -15,6 +21,8 @@ return require('packer').startup( function (use)
     use 'svrana/neosolarized.nvim'                                     -- neosolarized theme
 
     -- Neovim dev utilities (NERDTree, js-prettier)
+    use 'mfussenegger/nvim-dap'                                        -- dap (debug adapter protocol)
+    use 'mfussenegger/nvim-dap-python'
     use 'nvim-lua/plenary.nvim'                                        -- telescope dependencies
     use 'nvim-telescope/telescope.nvim'                                -- neovim telescope (command completion)
     use 'nvim-telescope/telescope-file-browser.nvim'                   -- telescope dependency
@@ -36,17 +44,14 @@ return require('packer').startup( function (use)
     use {'neoclide/coc.nvim', branch = 'release'}                     -- coc neovim lsp servers
 
     -- Programming languages support
-    use {'https://github.com/McSinyx/vim-octave.git', ft = {'octave'}} --octave syntax completion
     use {'https://github.com/jalvesaq/Nvim-R.git', ft = {'R'}}         -- R syntax completion
     use {'fatih/vim-go', cmd = ':GoUpdateBinaries'}                    -- golang formating
     use 'yuezk/vim-js'                                                 -- javascript code formating and syntax hightlighting
     use 'HerringtonDarkholme/yats.vim'                                 -- typescript code completion and syntax formating.
-    use 'luk400/vim-jukit'                                             -- jupyter completion
 
     use 'jose-elias-alvarez/null-ls.nvim'                              -- dependency for eslint
     use 'neovim/nvim-lspconfig'                                        -- dependency for null-ls
     use 'MunifTanjim/eslint.nvim'
     use 'MunifTanjim/nui.nvim'
-    use 'dpayne/CodeGPT.nvim'
     use 'tranvansang/octave.vim'                                       -- neovim octave syntax
 end)

@@ -12,7 +12,6 @@
                         "/usr/share/nvim/runtime/lua/vim": true,
                         "/usr/share/nvim/runtime/lua/vim/lsp": true,
                         "/usr/share/lua/5.3": true,
-                        "/usr/share/lua/5.3/cjson": true,
                         "/usr/local/share/luakit/lib": true,
                         "/home/tao/.luarocks/share/lua/5.3": true,
                     },
@@ -31,4 +30,5 @@
     },
     "sumneko-lua.enableNvimLuaDev": true
 }
+
 

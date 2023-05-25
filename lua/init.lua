@@ -14,6 +14,7 @@ end
 require_secure('config','error config')
 require_secure('plugins','error plugins')
 require_secure('maps','error loading maps')-- Lua configuration for neovim 
+require_secure('startup', 'Startup file raise an error')
 
 -- golang auto format 
 vim.api.nvim_create_autocmd("BufWrite",{

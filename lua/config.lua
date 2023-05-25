@@ -12,7 +12,7 @@ vim.opt.cmdheight = 1
 vim.opt.writebackup = true
 vim.opt.syntax = 'on'
 vim.opt.hlsearch = true
-vim.opt.shell = 'zsh'
+vim.opt.shell = 'bash'
 
 vim.opt.tabstop = 4
 vim.opt.wrap = true
@@ -21,7 +21,7 @@ vim.opt.expandtab = true
 vim.opt.foldmethod = 'manual'
 vim.opt.mouse = 'a'
 vim.opt.relativenumber = true
-vim.opt.backupdir = '~/.cache/vim'
+vim.opt.backupdir = os.getenv('HOME') .. '/.cache/vim'
 vim.opt.wildignore:append {'*/node_modules/*'}
 
 vim.opt.showmatch = true
@@ -41,17 +41,19 @@ end})
 
 -- vim.opt.packpath = vim.opt.runtimepath
 
-local twig_ft = vim.api.nvim_create_augroup('twig_ft',{clear = false})
 vim.api.nvim_create_autocmd({'BufNewFile','BufRead'},{pattern={'*.mac'},
     callback = function ()
-        vim.opt.syntax = 'maxima'
-        vim.opt.filetype = 'maxima'
+        vim.bo.filetype = 'maxima'
+    end})
+
+vim.api.nvim_create_autocmd({'BufRead','BufNewFile'}, {pattern='*.th',
+    callback = function()
+        vim.bo.filetype = 'lua'
     end})
 
 vim.api.nvim_create_autocmd({'BufNewFile','BufRead'},{pattern={'*.m'},
     callback = function ()
-        vim.opt.syntax = 'octave'
-        vim.opt.filetype = 'octave'
+        vim.bo.filetype = 'octave'
     end})
 
 vim.g.mapleader = ','
@@ -59,3 +61,8 @@ vim.g.mapleader = ','
 -- set off paste mode after leaving from insert mode
 vim.api.nvim_create_autocmd('InsertLeave',{
     pattern = '*',command = 'set nopaste'})
+
+-- DAP configuration
+local dap = require('dap')
+local dap_python = require'dap-python'
+dap_python.setup('/usr/bin/python3')

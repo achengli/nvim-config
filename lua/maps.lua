@@ -65,7 +65,7 @@ local function toggle_transparent_background()
 end
 
 -- change background color to transparent background by default and select the theme
-vim.api.nvim_exec('silent! color nightfly',false)
+vim.api.nvim_exec('silent! color OceanicNext',false)
 toggle_transparent_background()
 
 vim.keymap.set('n','<C-x><C-t>',toggle_transparent_background, {silent = true})
@@ -84,3 +84,34 @@ vim.keymap.set('n','<A-up>','<C-W>k',{})
 vim.keymap.set('n','<A-right>','<C-W>l',{})
 
 vim.keymap.set('i','<C-BS>','<C-w>',{})
+
+
+-- dap maps
+vim.keymap.set('n', '<C-b>b', function ()
+    require'dap'.toggle_breakpoint()
+end, {silent=true})
+
+vim.keymap.set('n', '<C-b>c', function ()
+    require'dap'.continue()
+end, {silent=true})
+
+vim.keymap.set('n', '<C-b>i', function ()
+    require'dap'.step_into()
+end, {silent=true})
+
+vim.keymap.set('n', '<C-b>o', function ()
+    require'dap'.step_over()
+end, {silent=true})
+
+-- toggle the up and down commands in buffer (this is more intuitive for me)
+vim.keymap.set({'n','v'}, 'j', function()
+    if vim.api.nvim_win_get_cursor(0)[1] > 1 then
+        vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1] - 1,vim.api.nvim_win_get_cursor(0)[2]})
+    end
+end, {silent=true})
+
+vim.keymap.set({'n', 'v'}, 'k', function()
+    if vim.api.nvim_win_get_cursor(0)[1] < vim.api.nvim_buf_line_count(0) then
+        vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1] + 1, vim.api.nvim_win_get_cursor(0)[1]})
+    end
+end, {silent=true})
