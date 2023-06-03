@@ -1,3 +1,5 @@
+-- current theme
+vim.g.current_theme = 'modus_vivendi'
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
@@ -66,3 +68,9 @@ vim.api.nvim_create_autocmd('InsertLeave',{
 local dap = require('dap')
 local dap_python = require'dap-python'
 dap_python.setup('/usr/bin/python3')
+
+
+-- Changing the background color as the theme too
+local toggle_transparent_background = require'utils'.toggle_transparent_background
+vim.api.nvim_exec('silent! color ' .. vim.g.current_theme,false)
+toggle_transparent_background()

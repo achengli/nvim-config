@@ -1,5 +1,5 @@
 vim.has = require'vimcompletions'.has
-
+local utils = require'utils'
 
 for _,e in pairs({'n','v'}) do
     vim.keymap.set(e,'<C-Down>','}',{remap = true, silent = true,desc = "Move down in a buffer jumping paragraphs"})
@@ -30,7 +30,7 @@ vim.keymap.set('n','<A-tab>', function ()
     if &modifiable && !&readonly && &modified
         write
     endif
-    bnext]], false)
+    bnext]])
 end, {silent = true})
 
 vim.keymap.set('n','<S-tab>', function ()
@@ -38,37 +38,10 @@ vim.keymap.set('n','<S-tab>', function ()
     if &modifiable && !&readonly && &modified
         write
     endif
-    bprevious]], false)
+    bprevious]])
 end, {silent = true})
 
-
-
--- Configuring toggle transparency in vim
-vim.t.is_transparent = false
-local function toggle_transparent_background()
-    if vim.t.is_transparent then
-        if vim.has(7) then
-            vim.api.nvim_set_hl(0,'Normal',{ctermbg = 'black', bg='black'})
-        else
-            --vim.cmd([[highlight Normal guibg=#000000 ctermbg=black]])
-            vim.api.nvim_exec('silent! colorscheme ' .. vim.api.nvim_exec('silent! colorscheme',false),false)
-        end
-        vim.t.is_transparent = false
-    else
-        if vim.has(7) then
-            vim.api.nvim_set_hl(0,'Normal',{ctermbg = 'NONE', bg='NONE'})
-        else
-            vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
-        end
-        vim.t.is_transparent = true
-    end
-end
-
--- change background color to transparent background by default and select the theme
-vim.api.nvim_exec('silent! color OceanicNext',false)
-toggle_transparent_background()
-
-vim.keymap.set('n','<C-x><C-t>',toggle_transparent_background, {silent = true})
+vim.keymap.set('n','<C-x><C-t>',utils.toggle_transparent_background, {silent = true})
 vim.keymap.set('n','<C-l>', function ()
     vim.api.nvim_exec(':NERDTreeToggle',false)
 end)

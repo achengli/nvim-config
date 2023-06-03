@@ -4,6 +4,8 @@ return require('packer').startup( function (use)
     use 'wbthomason/packer.nvim'
 
     -- themes and colorizing neovim
+    use 'ajmwagar/vim-deus'
+    use 'telamon/vim-color-github'
     use 'flazz/vim-colorschemes'
     use 'mhartington/oceanic-next'
     use 'cseelus/vim-colors-lanai'                                     -- light colorscheme
@@ -23,6 +25,7 @@ return require('packer').startup( function (use)
     -- Neovim dev utilities (NERDTree, js-prettier)
     use 'mfussenegger/nvim-dap'                                        -- dap (debug adapter protocol)
     use 'mfussenegger/nvim-dap-python'
+    use 'fatih/vim-go'                                                 -- vim golang support
     use 'nvim-lua/plenary.nvim'                                        -- telescope dependencies
     use 'nvim-telescope/telescope.nvim'                                -- neovim telescope (command completion)
     use 'nvim-telescope/telescope-file-browser.nvim'                   -- telescope dependency
