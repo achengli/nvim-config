@@ -1,5 +1,4 @@
--- current theme
-vim.g.current_theme = 'modus_vivendi'
+vim.g.current_theme = 'kanagawa'
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
@@ -64,6 +63,7 @@ vim.g.mapleader = ','
 vim.api.nvim_create_autocmd('InsertLeave',{
     pattern = '*',command = 'set nopaste'})
 
+
 -- DAP configuration
 local dap = require('dap')
 local dap_python = require'dap-python'
@@ -74,3 +74,6 @@ dap_python.setup('/usr/bin/python3')
 local toggle_transparent_background = require'utils'.toggle_transparent_background
 vim.api.nvim_exec('silent! color ' .. vim.g.current_theme,false)
 toggle_transparent_background()
+
+vim.g.dart_style_guide = 4
+vim.g.dart_html_in_string = true

@@ -20,6 +20,7 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.b.comment_leader = '// '
     end
 })
+
 vim.api.nvim_create_autocmd('FileType', {
     pattern = {'*.sh','*.py','*.m','*.r','*.R','fstab','*.conf'},
     group = commenting_blocks_of_code,

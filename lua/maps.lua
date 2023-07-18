@@ -46,10 +46,10 @@ vim.keymap.set('n','<C-l>', function ()
     vim.api.nvim_exec(':NERDTreeToggle',false)
 end)
 
-vim.keymap.set('n','<A-h>','<C-W>H',{})
-vim.keymap.set('n','<A-j>','<C-W>J',{})
-vim.keymap.set('n','<A-k>','<C-W>K',{})
-vim.keymap.set('n','<A-l>','<C-W>L',{})
+vim.keymap.set('n','<C-h>','<C-W>H',{})
+vim.keymap.set('n','<C-j>','<C-W>J',{})
+vim.keymap.set('n','<C-k>','<C-W>K',{})
+vim.keymap.set('n','<C-l>','<C-W>L',{})
 
 vim.keymap.set('n','<A-left>','<C-W>h',{})
 vim.keymap.set('n','<A-down>','<C-W>j',{})
@@ -74,17 +74,4 @@ end, {silent=true})
 
 vim.keymap.set('n', '<C-b>o', function ()
     require'dap'.step_over()
-end, {silent=true})
-
--- toggle the up and down commands in buffer (this is more intuitive for me)
-vim.keymap.set({'n','v'}, 'j', function()
-    if vim.api.nvim_win_get_cursor(0)[1] > 1 then
-        vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1] - 1,vim.api.nvim_win_get_cursor(0)[2]})
-    end
-end, {silent=true})
-
-vim.keymap.set({'n', 'v'}, 'k', function()
-    if vim.api.nvim_win_get_cursor(0)[1] < vim.api.nvim_buf_line_count(0) then
-        vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1] + 1, vim.api.nvim_win_get_cursor(0)[1]})
-    end
 end, {silent=true})
