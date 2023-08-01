@@ -12,7 +12,6 @@
                         "/usr/share/nvim/runtime/lua/vim": true,
                         "/usr/share/nvim/runtime/lua/vim/lsp": true, 
                         "/usr/local/share/luakit/lib": true,
-                        "/home/tao/.luarocks/share/lua/5.3": true,
                         "/home/tao/.luarocks/lib/lua/5.4": true,
                         "/home/tao/.luarocks/lib/lua/5.3": true,
                         "/home/tao/.luarocks/share/lua/5.4": true,
@@ -26,9 +25,10 @@
             }
         },
         "vimlsp": {
+            "filetypes": ["vim"],
             "indexes": {
                 "projectRootPatterns": [".git","autoload",".github","plugin"]
-            }
+            },
         }
     },
     "sumneko-lua.enableNvimLuaDev": true

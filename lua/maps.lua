@@ -1,36 +1,17 @@
 vim.has = require'vimcompletions'.has
 local utils = require'utils'
 
-for _,e in pairs({'n','v'}) do
-    vim.keymap.set(e,'<C-Down>','}',{remap = true, silent = true,desc = "Move down in a buffer jumping paragraphs"})
-    vim.keymap.set(e,'<C-Up>','{',{remap = true, silent = true, desc = "Move up in a buffer jumping paragraphs"})
-    vim.keymap.set(e,'<C-Left>','b',{remap = true, silent = true, desc = "Move left jumping words"})
-    vim.keymap.set(e,'<C-Right>','e',{remap = true, silent = true, desc = "Move right jumping words"})
-    vim.keymap.set(e,'<C-a>','^',{remap = true, silent = true, desc = "Go to the end of line"})
-    vim.keymap.set(e,'<C-e>','$',{remap = true, silent = true, desc = "Go to beginning of line"})
-end
-
-vim.keymap.set('i','<C-Down>','<esc>}i',{remap = true, silent = true, })
-vim.keymap.set('i','<C-Up>','<esc>{i',{remap = true, silent = true})
-vim.keymap.set('i','<C-Left>','<esc>ba',{remap = true, silent = true})
-vim.keymap.set('i','<C-Right>','<esc>ea',{remap = true, silent = true})
-vim.keymap.set('i','<C-a>','<esc>^i',{remap = true, silent = true})
-vim.keymap.set('i','<C-e>','<esc>$A',{remap = true, silent = true})
-
 -- Control + backspace == remove word back.
 vim.opt.backspace={'indent','eol','start'}
 vim.keymap.set('i','<C-h>', '<C-w>', {silent = true, remap = true})
 
-vim.g.NERDTreeShowHidden = 1
-
 -- Rotate between buffers using Alt-tab to rotate right and Shift-tab 
 -- to rotate left.
 vim.keymap.set('n','<A-tab>', function ()
-    vim.cmd([[
-    if &modifiable && !&readonly && &modified
-        write
-    endif
-    bnext]])
+    if (vim.opt.modifiable and (not vim.opt.readonly) and vim.opt.modified) then
+        vim.cmd('write')
+    end
+    vim.cmd('bnext')
 end, {silent = true})
 
 vim.keymap.set('n','<S-tab>', function ()
@@ -45,11 +26,6 @@ vim.keymap.set('n','<C-x><C-t>',utils.toggle_transparent_background, {silent = t
 vim.keymap.set('n','<C-l>', function ()
     vim.api.nvim_exec(':NERDTreeToggle',false)
 end)
-
-vim.keymap.set('n','<C-h>','<C-W>H',{})
-vim.keymap.set('n','<C-j>','<C-W>J',{})
-vim.keymap.set('n','<C-k>','<C-W>K',{})
-vim.keymap.set('n','<C-l>','<C-W>L',{})
 
 vim.keymap.set('n','<A-left>','<C-W>h',{})
 vim.keymap.set('n','<A-down>','<C-W>j',{})
@@ -75,3 +51,16 @@ end, {silent=true})
 vim.keymap.set('n', '<C-b>o', function ()
     require'dap'.step_over()
 end, {silent=true})
+
+vim.keymap.set('i', '<C-j>', function ()
+    if vim.fn['coc#float#has_scroll']() then
+        vim.fn['coc#float#scroll'](1,1)
+    end
+end, {silent=true})
+
+vim.keymap.set('i', '<C-k>', function ()
+    if vim.fn['coc#float#has_scroll']() then
+        vim.fn['coc#float#scroll'](0,1)
+    end
+end, {silent=true})
+
