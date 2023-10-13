@@ -15,10 +15,10 @@ let g:colors_name = 'modus_operandi'
 " General
 " -------
 if exists('g:modus_themes_enforce_background_color')
-	hi Normal guibg=#ffffff guifg=#000000 ctermbg=15 ctermfg=0
+	hi Normal guibg=#fff3e9 guifg=#000000 ctermbg=15 ctermfg=0
 else
 	" NOTE the ctermbg=none is for terminals with transparency
-	hi Normal guibg=#ffffff guifg=#000000 ctermbg=none ctermfg=0
+	hi Normal guibg=#fff3e9 guifg=#000000 ctermbg=none ctermfg=0
 endif
 
 hi Visual guibg=#000000 guifg=#ffffff ctermbg=0 ctermfg=15
@@ -94,7 +94,7 @@ hi Debug guifg=#8f0075 ctermfg=13
 
 " Other
 " -----
-hi LineNr guibg=#f0f0f0 guifg=#505050 term=none ctermbg=7 ctermfg=8
+hi LineNr guibg=#fff3d9 guifg=#505050 term=none ctermbg=7 ctermfg=8
 hi Cursor guibg=#000000 guifg=#ffffff ctermbg=0 ctermfg=15
 hi CursorLine gui=none guibg=#f0f0f0 term=none cterm=none ctermbg=7
 hi CursorColumn gui=none guibg=#f0f0f0 term=none cterm=none ctermbg=7

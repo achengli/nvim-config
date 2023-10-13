@@ -28,3 +28,4 @@ vim.api.nvim_create_user_command('CommentLine', function()
     local l = vim.api.nvim_buf_get_lines(0, a[1], b[1], true)
     comment_line_encapsulation(l)
 end)
+

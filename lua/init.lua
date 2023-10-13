@@ -28,3 +28,4 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.b.comment_leader = '# '
     end
 })
+

@@ -1,4 +1,5 @@
-vim.g.current_theme = 'kanagawa'
+vim.g.current_theme = 'tempus_night'
+vim.g.scientific_theme = 'tempus_totus'
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
@@ -57,6 +58,19 @@ vim.api.nvim_create_autocmd({'BufNewFile','BufRead'},{pattern={'*.m'},
         vim.bo.filetype = 'octave'
     end})
 
+vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {pattern={'*.m', '*.jl', '*.r', '*.el', '*.lisp', '*.mac'},
+    callback = function ()
+        if (vim.g.scientific_theme_loaded) then
+            return
+        end
+        vim.g.scientific_theme_loaded = true
+        local inp = vim.fn['input']("Scientific theme? [y/N] ")
+        if (inp:sub(1,1) == 'y') then
+            vim.cmd('color ' .. vim.g.scientific_theme)
+        end
+    end})
+
+
 vim.g.mapleader = ','
 
 -- set off paste mode after leaving from insert mode
@@ -74,6 +88,18 @@ dap_python.setup('/usr/bin/python3')
 local toggle_transparent_background = require'utils'.toggle_transparent_background
 vim.api.nvim_exec('silent! color ' .. vim.g.current_theme,false)
 toggle_transparent_background()
+
+-- lsp configuration
+local lspconfig = require'lspconfig'
+local on_attach_custom = function(client, bufnr)
+    local function buf_set_option(name, value)
+        vim.api.nvim_buf_set_option(bufnr, name, value)
+    end
+
+    client.resolved_capabilities.document_formatting = false
+end
+
+lspconfig.r_language_server.setup{}
 
 vim.g.dart_style_guide = 4
 vim.g.dart_html_in_string = true

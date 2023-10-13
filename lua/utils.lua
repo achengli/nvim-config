@@ -18,15 +18,12 @@ end
 --- Changes the transparency doing the current theme background transparent.
 --- To change it, the function converts the background to a dark color due
 --- The color is reversed again.
+
 vim.t.is_transparent = false
+
 function utils.toggle_transparent_background()
     if vim.t.is_transparent then
-        if vim.has(7) then
-            vim.api.nvim_set_hl(0,'Normal',{ctermbg = 'black', bg='black'})
-        else
-            --vim.cmd([[highlight Normal guibg=#000000 ctermbg=black]])
-            vim.api.nvim_exec('silent! colorscheme ' .. vim.api.nvim_exec('silent! colorscheme',false),false)
-        end
+        vim.api.nvim_exec('silent! colorscheme ' .. vim.api.nvim_exec('silent! colorscheme',false),false)
         vim.t.is_transparent = false
     else
         if vim.has(7) then

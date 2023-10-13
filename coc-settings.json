@@ -26,9 +26,7 @@
         },
         "vimlsp": {
             "filetypes": ["vim"],
-            "indexes": {
-                "projectRootPatterns": [".git","autoload",".github","plugin"]
-            },
+            "indexes.projectRootPatterns": [".git","autoload",".github","plugin"]
         }
     },
     "sumneko-lua.enableNvimLuaDev": true

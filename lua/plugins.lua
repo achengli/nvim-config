@@ -4,6 +4,10 @@ return require('packer').startup( function (use)
     use 'wbthomason/packer.nvim'
 
     -- themes and colorizing neovim
+    use 'olivercederborg/poimandres.nvim'
+    use 'embark-theme/vim'
+    use 'crispybaccoon/aurora'
+    use 'johnridesabike/vim-stella-maris'
     use 'dag/vim-fish'
     use 'humanoid-colors/vim-humanoid-colorscheme'
     use "rebelot/kanagawa.nvim"
@@ -23,6 +27,8 @@ return require('packer').startup( function (use)
     end}
 
     -- Neovim dev utilities (NERDTree, js-prettier)
+    use 'onsails/lspkind.nvim'                                         -- neovim lsp symbols
+    use 'folke/lsp-colors.nvim'                                        -- neovim lsp colors
     use 'mfussenegger/nvim-dap'                                        -- dap (debug adapter protocol)
     use 'mfussenegger/nvim-dap-python'
     use 'nvim-lua/plenary.nvim'                                        -- telescope dependencies
@@ -44,11 +50,13 @@ return require('packer').startup( function (use)
     use {'neoclide/coc.nvim', branch = 'release'}                     -- coc neovim lsp servers
 
     -- Programming languages support
+    use 'ollykel/v-vim'                                                 -- V lang support.
     use 'dart-lang/dart-vim-plugin'
     use {'https://github.com/jalvesaq/Nvim-R.git', ft = {'R'}}         -- R syntax completion
     use {'fatih/vim-go', cmd = ':GoUpdateBinaries'}                    -- golang formating
     use 'yuezk/vim-js'                                                 -- javascript code formating and syntax hightlighting
     use 'HerringtonDarkholme/yats.vim'                                 -- typescript code completion and syntax formating.
+
 
     use 'jose-elias-alvarez/null-ls.nvim'                              -- dependency for eslint
     use 'neovim/nvim-lspconfig'                                        -- dependency for null-ls
@@ -56,3 +64,5 @@ return require('packer').startup( function (use)
     use 'MunifTanjim/nui.nvim'
     use 'tranvansang/octave.vim'                                       -- neovim octave syntax
 end)
+
+
