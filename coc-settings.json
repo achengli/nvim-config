@@ -29,7 +29,11 @@
             "indexes.projectRootPatterns": [".git","autoload",".github","plugin"]
         }
     },
-    "sumneko-lua.enableNvimLuaDev": true
+    "sumneko-lua.enableNvimLuaDev": true,
+    "coc.source.vimtex.filetypes": [
+      "tex",
+      "latex"
+    ]
 }
 
 
