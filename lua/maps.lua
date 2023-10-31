@@ -60,19 +60,3 @@ end, {silent=true})
 vim.keymap.set('n', '<C-b>o', function ()
     require'dap'.step_over()
 end, {silent=true})
-
--- # LSP message commands
--- - Ctrl-j: Scroll down
--- - Ctrl-k: Scroll up
-vim.keymap.set('i', '<C-j>', function ()
-    if vim.fn['coc#float#has_scroll']() then
-        vim.fn['coc#float#scroll'](1,1)
-    end
-end, {silent=true})
-
-vim.keymap.set('i', '<C-k>', function ()
-    if vim.fn['coc#float#has_scroll']() then
-        vim.fn['coc#float#scroll'](0,1)
-    end
-end, {silent=true})
-

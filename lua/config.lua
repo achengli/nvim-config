@@ -88,18 +88,3 @@ dap_python.setup('/usr/bin/python3')
 local toggle_transparent_background = require'utils'.toggle_transparent_background
 vim.api.nvim_exec('silent! color ' .. vim.g.current_theme,false)
 toggle_transparent_background()
-
--- lsp configuration
-local lspconfig = require'lspconfig'
-local on_attach_custom = function(client, bufnr)
-    local function buf_set_option(name, value)
-        vim.api.nvim_buf_set_option(bufnr, name, value)
-    end
-
-    client.resolved_capabilities.document_formatting = false
-end
-
-lspconfig.r_language_server.setup{}
-
-vim.g.dart_style_guide = 4
-vim.g.dart_html_in_string = true
