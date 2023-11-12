@@ -26,7 +26,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 nvim_lsp.tsserver.setup {
     on_attach = on_attach,
     cmd = { "typescript-language-server", "--stdio" },
-    capabilities = capabilities
+    capabilities = capabilities,
+    init_options = {
+        preferences = {
+            disableSuggestions = true,
+        },
+    },
 }
 
 nvim_lsp.lua_ls.setup {
@@ -47,6 +52,18 @@ nvim_lsp.lua_ls.setup {
                 library = vim.api.nvim_get_runtime_file("", true),
                 checkThirdParty = false
             },
+            completion = {
+                enable = true,
+                autoRequire = true,
+                callSnippet = 'Replace',
+                KeywordSnippet = 'Replace',
+            },
+            hint = {
+                enable = false,
+            },
+            runtime = {
+                version = "Lua 5.3",
+            },
         },
     },
 }
@@ -57,6 +74,11 @@ nvim_lsp.tailwindcss.setup {
 }
 
 nvim_lsp.vimls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
+nvim_lsp.r_language_server.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
@@ -105,3 +127,4 @@ vim.diagnostic.config({
         source = "always", -- Or "if_many"
     },
 })
+

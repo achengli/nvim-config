@@ -17,13 +17,22 @@ packer.startup( function (use)
         'svrana/neosolarized.nvim',
         requires = {'tjdevries/colorbuddy.nvim'}
     }
+
+    -- UI style
     use 'nvim-lualine/lualine.nvim' -- Status line
     use 'akinsho/nvim-bufferline.lua'
     use 'nvim-lua/plenary.nvim' -- common utilities
+
+    -- Autocompletion
     use 'onsails/lspkind-nvim'
     use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
     use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
     use 'hrsh7th/nvim-cmp' -- Completion
+
+    -- Snippets
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+    use "rafamadriz/friendly-snippets"
 
     -- DAP support
     use 'mfussenegger/nvim-dap'
@@ -56,5 +65,3 @@ packer.startup( function (use)
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
 end)
-
-

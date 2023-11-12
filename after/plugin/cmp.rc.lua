@@ -2,6 +2,8 @@ local status, cmp = pcall(require, "cmp")
 if (not status) then return end
 local lspkind = require 'lspkind'
 
+vim.api.nvim_set_hl(0, "Pmenu", { bg = "None", fg='#f3e8e8', ctermbg="None", italic=true})
+
 local function formatForTailwindCSS(entry, vim_item)
     if vim_item.kind == 'Color' and entry.completion_item.documentation then
         local _, _, r, g, b = string.find(entry.completion_item.documentation, '^rgb%((%d+), (%d+), (%d+)')
@@ -48,6 +50,20 @@ cmp.setup({
                 return vim_item
             end
         })
+    },
+    window = {
+        completion = {
+            winhighlight = 'Normal:Pmenu,FloatBorder:Normal,CursorLine:PmenuSel,Search:None',
+            border = 'rounded',
+            side_padding = 1,
+            col_offset = -3,
+        },
+        documentation = {
+            winhighlight = 'Normal:Pmenu,FloatBorder:Normal,CursorLine:PmenuSel,Search:None',
+            border = 'rounded',
+            side_padding = 1,
+            col_offset = -3,
+        },
     }
 })
 

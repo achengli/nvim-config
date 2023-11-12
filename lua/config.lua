@@ -1,4 +1,4 @@
-vim.g.current_theme = 'tempus_night'
+vim.g.current_theme = 'NeoSolarized'
 vim.g.scientific_theme = 'tempus_totus'
 
 vim.scriptencoding = 'utf-8'
@@ -16,7 +16,7 @@ vim.opt.syntax = 'on'
 vim.opt.hlsearch = true
 vim.opt.shell = 'bash'
 
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 vim.opt.wrap = true
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -31,8 +31,8 @@ vim.opt.ignorecase = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
+vim.opt.pumblend = 40
 vim.opt.winblend = 0
-vim.opt.pumblend = 5
 vim.opt.background = 'dark'
 vim.g.vimspector_enable_mappings = 'HUMAN'
 
@@ -58,6 +58,7 @@ vim.api.nvim_create_autocmd({'BufNewFile','BufRead'},{pattern={'*.m'},
         vim.bo.filetype = 'octave'
     end})
 
+vim.g.scientific_theme_loaded = true
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {pattern={'*.m', '*.jl', '*.r', '*.el', '*.lisp', '*.mac'},
     callback = function ()
         if (vim.g.scientific_theme_loaded) then
@@ -87,4 +88,4 @@ dap_python.setup('/usr/bin/python3')
 -- Changing the background color as the theme too
 local toggle_transparent_background = require'utils'.toggle_transparent_background
 vim.api.nvim_exec('silent! color ' .. vim.g.current_theme,false)
-toggle_transparent_background()
+-- toggle_transparent_background()
