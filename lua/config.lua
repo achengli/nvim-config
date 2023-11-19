@@ -1,4 +1,4 @@
-vim.g.current_theme = 'NeoSolarized'
+vim.g.current_theme = 'solarized-osaka'
 vim.g.scientific_theme = 'tempus_totus'
 
 vim.scriptencoding = 'utf-8'
@@ -89,3 +89,4 @@ dap_python.setup('/usr/bin/python3')
 local toggle_transparent_background = require'utils'.toggle_transparent_background
 vim.api.nvim_exec('silent! color ' .. vim.g.current_theme,false)
 -- toggle_transparent_background()
+

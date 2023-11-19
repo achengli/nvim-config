@@ -1,0 +1,8 @@
+local wezterm = require'wezterm'
+local config = {}
+if wezterm.config_builder then
+    config = wezterm.config_builder()
+end
+wezterm.font = 'PlemolJP Console NF Regular'
+config.color_scheme = 'AdventureTime'
+return config

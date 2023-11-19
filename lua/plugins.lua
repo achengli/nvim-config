@@ -13,10 +13,7 @@ packer.startup( function (use)
     use 'kyazdani42/nvim-web-devicons'
     use 'norcalli/nvim-colorizer.lua'
     use 'tjdevries/colorbuddy.nvim'
-    use {
-        'svrana/neosolarized.nvim',
-        requires = {'tjdevries/colorbuddy.nvim'}
-    }
+    use 'craftzdog/solarized-osaka.nvim'
 
     -- UI style
     use 'nvim-lualine/lualine.nvim' -- Status line

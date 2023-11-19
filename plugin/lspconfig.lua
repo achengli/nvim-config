@@ -23,6 +23,7 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+
 nvim_lsp.tsserver.setup {
     on_attach = on_attach,
     cmd = { "typescript-language-server", "--stdio" },
@@ -89,10 +90,7 @@ nvim_lsp.cssls.setup {
 }
 
 nvim_lsp.astro.setup {
-    on_attach = on_attach,
-    capabilities = capabilities
 }
-
 
 nvim_lsp.julials.setup {
     on_attach = on_attach,
@@ -104,8 +102,7 @@ nvim_lsp.pyright.setup {
     capabilities = capabilities
 }
 
-nvim_lsp.clangd.setup {
-    on_attach = on_attach,
+nvim_lsp.ccls.setup {
     capabilities = capabilities
 }
 

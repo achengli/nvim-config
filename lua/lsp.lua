@@ -2,7 +2,7 @@ local ok, mymod = pcall(require, 'module_with_error')
 
 -- Este ejemplo intenta llamar una libreria de forma segura por lo que si no
 -- existe no se detiene por error y solo te tira el error.
-if not ok then 
+if not ok then
     print("Module had an error")
 else
     mymod.func()
@@ -14,7 +14,7 @@ require('myluamodule') -- read and execute the module again from disk.
 -- Uso de funciones nativas de vimscript desde lua
 vim.cmd("colorscheme habamax")
 vim.cmd("%s/\\Vfoo/bar/g")
-vim.cmd("[[%s/\Vfoo/bar/g]]")
+vim.cmd([[%s/\Vfoo/bar/g]])
 vim.cmd([[
     highlight Error guibg=red
     highlight link Warning Error

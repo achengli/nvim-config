@@ -10,6 +10,9 @@ end
 local fb_actions = require'telescope'.extensions.file_browser.actions
 
 telescope.setup {
+    layout_strategy = 'vertical',
+    layout_config = {width=0.9, height = 0.4},
+    sorting_strategy = 'descending',
     defaults = {
         mappings = {
             n = {
@@ -72,6 +75,5 @@ vim.keymap.set("n", "sf", function()
     grouped = true,
     previewer = false,
     initial_mode = "normal",
-    layout_config = { height = 40 }
   })
   end)
