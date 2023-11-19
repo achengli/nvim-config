@@ -41,6 +41,8 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'buffer' },
+        { name = 'path' },
+        { name = 'luasnip'},
     }),
     formatting = {
         format = lspkind.cmp_format({
