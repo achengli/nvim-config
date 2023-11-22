@@ -18,7 +18,7 @@ vim.opt.shell = 'bash'
 
 vim.opt.tabstop = 2
 vim.opt.wrap = true
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.foldmethod = 'manual'
 vim.opt.mouse = 'a'

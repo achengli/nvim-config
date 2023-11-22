@@ -1,10 +1,24 @@
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
+local solarized_osaka_custom = require('lualine.themes.solarized-osaka')
+
+solarized_osaka_custom.normal.c.bg = 'None'
+solarized_osaka_custom.normal.b.bg = 'None'
+solarized_osaka_custom.normal.b.fg = solarized_osaka_custom.normal.c.fg
+solarized_osaka_custom.normal.a.fg = '#fca311'
+solarized_osaka_custom.insert.a.fg = '#adc178'
+solarized_osaka_custom.visual.a.fg = '#7678ed'
+solarized_osaka_custom.command.a.fg = '#ffc2d1'
+solarized_osaka_custom.normal.a.bg = 'None'
+solarized_osaka_custom.visual.a.bg = 'None'
+solarized_osaka_custom.insert.a.bg = 'None'
+solarized_osaka_custom.command.a.bg = 'None'
+
 lualine.setup {
     options = {
         icons_enabled = true,
-        theme = 'auto',
+        theme = solarized_osaka_custom,
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
         disabled_filetypes = {}
