@@ -77,3 +77,12 @@ vim.keymap.set("n", "sf", function()
     initial_mode = "normal",
   })
   end)
+
+vim.cmd[[
+  hi TelescopePromptNormal ctermbg=None
+  hi TelescopePromptBorder ctermbg=None
+  hi TelescopePromptTitle ctermbg=None
+  hi TelescopeResultsNormal ctermbg=None
+  hi TelescopeResultsBorder ctermbg=None
+  hi TelescopeResultsTitle ctermbg=None
+  ]]

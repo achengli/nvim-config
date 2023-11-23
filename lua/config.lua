@@ -26,6 +26,7 @@ vim.opt.relativenumber = true
 vim.opt.backupdir = os.getenv('HOME') .. '/.cache/vim'
 vim.opt.wildignore:append {'*/node_modules/*'}
 
+vim.opt.mousemoveevent = true
 vim.opt.showmatch = true
 vim.opt.ignorecase = true
 vim.opt.clipboard = 'unnamedplus'
