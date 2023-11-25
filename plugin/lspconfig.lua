@@ -106,22 +106,21 @@ nvim_lsp.ccls.setup {
     capabilities = capabilities
 }
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    update_in_insert = false,
-    virtual_text = { spacing = 4, prefix = "\u{ea71}" },
-    severity_sort = true,
-}
-)
-
 vim.diagnostic.config({
     virtual_text = {
         prefix = '●'
     },
     update_in_insert = true,
     float = {
-        source = "always", -- Or "if_many"
+        source = "single", -- Or "if_many"
     },
+})
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+vim.lsp.diagnostic.on_publish_diagnostics, {
+  underline = true,
+  update_in_insert = false,
+  virtual_text = { spacing = 4, prefix = "\u{ea71}" },
+  severity_sort = true,
 })
 

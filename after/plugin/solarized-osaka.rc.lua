@@ -52,3 +52,7 @@ require('solarized-osaka').setup({
         }
     end
 })
+
+vim.cmd[[
+  hi CursorLine guibg=None gui=bold
+  ]]
