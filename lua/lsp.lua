@@ -70,7 +70,7 @@ vim.g.myvar = nil
 
 vim.opt.smarttab = true
 vim.opt.smarttab = false
- 
+
 -- set wildignore=*.o,*.a,__pycache__
 -- set listchars=space:_,tab:>~
 -- set formatoptions=njt

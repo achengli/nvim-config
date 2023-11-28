@@ -36,7 +36,8 @@ nvim_lsp.tsserver.setup {
 }
 
 nvim_lsp.lua_ls.setup {
-    capabilities = capabilities,
+    --capabilities = capabilities,
+    cmd = {'lua-language-server'},
     on_attach = function(client, bufnr)
         on_attach(client, bufnr)
         enable_format_on_save(client, bufnr)
@@ -45,17 +46,35 @@ nvim_lsp.lua_ls.setup {
         Lua = {
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
+                enable = true,
                 globals = { 'vim' },
             },
-
             workspace = {
                 -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-                checkThirdParty = false
+                preloadFileSize = 65536,
+                maxPreload = 1000,
+                ignoreDir = {
+                  '.vscode',
+                  '.git',
+                },
+                library = {
+                  vim.env.VIMRUNTIME,
+                  vim.fn.expand'~/.config/rc.lua',
+                  vim.fn.expand'~/.luarocks/share/lua/5.3',
+                  vim.fn.expand'~/.luarocks/share/lua/5.4',
+                  '/usr/share/lua/5.3/luarocks',
+                  vim.fn.expand'$PWD',
+                },
+                checkThirdParty = false,
+            },
+            window = {
+              progressBar = true,
+              statusBar = true,
             },
             completion = {
                 enable = true,
                 autoRequire = true,
+                displayContext = 7,
                 callSnippet = 'Replace',
                 KeywordSnippet = 'Replace',
             },
@@ -64,10 +83,14 @@ nvim_lsp.lua_ls.setup {
             },
             runtime = {
                 version = "Lua 5.3",
+                pathStrict = true,
+                builtin = {
+                  ['rc'] = 'enable',
+                }
+              },
             },
-        },
-    },
-}
+          },
+        }
 
 nvim_lsp.tailwindcss.setup {
     on_attach = on_attach,
@@ -123,4 +146,3 @@ vim.lsp.diagnostic.on_publish_diagnostics, {
   virtual_text = { spacing = 4, prefix = "\u{ea71}" },
   severity_sort = true,
 })
-
