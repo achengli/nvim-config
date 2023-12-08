@@ -1,4 +1,4 @@
-vim.g.current_theme = 'solarized-osaka'
+vim.g.current_theme = 'modus_vivendi'
 vim.g.scientific_theme = 'tempus_totus'
 
 vim.scriptencoding = 'utf-8'
@@ -16,13 +16,14 @@ vim.opt.syntax = 'on'
 vim.opt.hlsearch = true
 vim.opt.shell = 'bash'
 
+vim.opt.relativenumber = true
+
 vim.opt.tabstop = 2
 vim.opt.wrap = true
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.foldmethod = 'manual'
 vim.opt.mouse = 'a'
-vim.opt.relativenumber = true
 vim.opt.backupdir = os.getenv('HOME') .. '/.cache/vim'
 vim.opt.wildignore:append {'*/node_modules/*'}
 
@@ -89,5 +90,4 @@ dap_python.setup('/usr/bin/python3')
 -- Changing the background color as the theme too
 local toggle_transparent_background = require'utils'.toggle_transparent_background
 vim.api.nvim_exec('silent! color ' .. vim.g.current_theme,false)
--- toggle_transparent_background()
-
+toggle_transparent_background()

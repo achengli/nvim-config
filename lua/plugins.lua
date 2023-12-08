@@ -39,12 +39,14 @@ packer.startup( function (use)
     -- Telescope
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
+    use 'andrew-george/telescope-themes'
 
     use 'https://github.com/ctrlpvim/ctrlp.vim.git'
     use 'mattn/emmet-vim'
     use 'nvim-treesitter/nvim-treesitter'
 
     -- Programming languages support
+    use 'bakpakin/fennel.vim' -- fennel
     use 'dag/vim-fish'
     use 'tranvansang/octave.vim'
     use {'numToStr/Comment.nvim',

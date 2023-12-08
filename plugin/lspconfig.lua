@@ -146,3 +146,17 @@ vim.lsp.diagnostic.on_publish_diagnostics, {
   virtual_text = { spacing = 4, prefix = "\u{ea71}" },
   severity_sort = true,
 })
+
+local confs = require'lspconfig.configs'
+local lspconfig = require'lspconfig'
+
+confs['cl_lsp'] =  {
+  default_config = {
+    cmd = {vim.env.HOME .. '/.roswell/bin/cl-lsp'},
+    filetypes = {'lisp'},
+    -- root_dir = lspconfig.util.find_git_ancestor,
+    settins = {},
+  },
+}
+
+require('lspconfig').cl_lsp.setup{}

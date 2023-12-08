@@ -8,11 +8,13 @@ local function telescope_buffer_dir()
 end
 
 local fb_actions = require'telescope'.extensions.file_browser.actions
+local themes = require'telescope'.themes
 
 telescope.setup {
-  layout_strategy = 'vertical',
-  layout_config = {width=0.9},
-  sorting_strategy = 'descending',
+  prompt_prefix = " ",
+  selection_caret = " ",
+  path_display = { "smart" },
+
   defaults = {
     previewer = true,
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
@@ -25,14 +27,9 @@ telescope.setup {
     },
   },
   extensions = {file_browser = {
-    layout_strategy = 'horizontal',
-    layout_config = {width=0.9},
-    previewer = true,
-    theme = 'dropdown',
-    hijack_newtrw=true,
-    files = true,
-    git_status = true,
-    auto_depth = 2,
+    require('telescope.themes').get_dropdown {
+      previewer = true,
+    },
     mappings = {
       ['i'] = {
         ['<C-w>'] = function () vim.cmd('normal vbd') end,
