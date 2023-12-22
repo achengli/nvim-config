@@ -14,9 +14,8 @@ telescope.setup {
   prompt_prefix = " ",
   selection_caret = " ",
   path_display = { "smart" },
-
   defaults = {
-    previewer = true,
+    previewer = false,
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
@@ -76,10 +75,10 @@ vim.keymap.set("n", "sf", function()
     path = "%:p:h",
     cwd = telescope_buffer_dir(),
     respect_gitignore = false,
-    hidden = false,
+    hidden = true,
     grouped = false,
     previewer = true,
---    initial_mode = "normal",
+    initial_mode = "normal",
   })
 end)
 

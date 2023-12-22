@@ -1,4 +1,4 @@
-vim.g.current_theme = 'modus_vivendi'
+vim.g.current_theme = 'tempus_autumn'
 vim.g.scientific_theme = 'tempus_totus'
 
 vim.scriptencoding = 'utf-8'
@@ -53,6 +53,11 @@ vim.api.nvim_create_autocmd({'BufNewFile','BufRead'},{pattern={'*.mac'},
 vim.api.nvim_create_autocmd({'BufRead','BufNewFile'}, {pattern='*.th',
     callback = function()
         vim.bo.filetype = 'lua'
+    end})
+    
+vim.api.nvim_create_autocmd({'BufRead','BufNewFile'}, {pattern='pythonrc',
+    callback = function()
+        vim.bo.filetype = 'python'
     end})
 
 vim.api.nvim_create_autocmd({'BufNewFile','BufRead'},{pattern={'*.m'},

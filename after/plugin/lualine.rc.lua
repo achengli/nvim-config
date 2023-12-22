@@ -1,6 +1,7 @@
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
+-- solarized-osaka customization
 local solarized_osaka_custom = require('lualine.themes.solarized-osaka')
 
 solarized_osaka_custom.normal.c.bg = 'None'

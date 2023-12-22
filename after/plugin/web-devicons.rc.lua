@@ -25,6 +25,10 @@ icons.setup {
       icon = '󰘨 ',
       color = '#b81363',
     },
+    ['mac'] = {
+      icon = ' ',
+      color = '#a8dadc'
+    },
     ['el'] = {
       icon = ' ',
       color = '#7803b3',
