@@ -12,6 +12,7 @@ ts.setup {
     },
     ensure_installed = {
         "markdown",
+        "python",
         "markdown_inline",
         "tsx",
         "toml",

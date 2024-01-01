@@ -14,6 +14,7 @@ packer.startup( function (use)
   use 'norcalli/nvim-colorizer.lua'
   use 'tjdevries/colorbuddy.nvim'
   use 'craftzdog/solarized-osaka.nvim'
+  use 'protesilaos/prot16-vim'
 
   -- UI style
   use 'nvim-lualine/lualine.nvim' -- Status line

@@ -1,4 +1,4 @@
-vim.g.current_theme = 'tempus_autumn'
+vim.g.current_theme = 'bionis_dark'
 vim.g.scientific_theme = 'tempus_totus'
 
 vim.scriptencoding = 'utf-8'
