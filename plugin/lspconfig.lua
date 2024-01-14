@@ -159,4 +159,5 @@ confs['cl_lsp'] =  {
   },
 }
 
-require('lspconfig').cl_lsp.setup{}
+--- LSP diagnostics. Prompts are out of line so cannot be read.
+vim.diagnostic.open_float()

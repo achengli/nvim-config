@@ -39,7 +39,7 @@ packer.startup( function (use)
         },
       },
     },
-  })    
+  })
 
   -- Snippets
   use 'L3MON4D3/LuaSnip'
