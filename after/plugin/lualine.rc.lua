@@ -19,7 +19,7 @@ solarized_osaka_custom.command.a.bg = 'None'
 lualine.setup {
     options = {
         icons_enabled = true,
-        theme = solarized_osaka_custom,
+        theme = 'poimandres',
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
         disabled_filetypes = {}

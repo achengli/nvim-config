@@ -1,4 +1,4 @@
-vim.g.current_theme = 'flowerbed_dark'
+vim.g.current_theme = 'poimandres'
 vim.g.scientific_theme = 'tempus_totus'
 
 vim.opt.showmatch = true

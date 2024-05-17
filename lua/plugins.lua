@@ -10,6 +10,7 @@ packer.startup( function (use)
   use 'wbthomason/packer.nvim' -- Packer
 
   -- nvim theming
+  use 'olivercederborg/poimandres.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'norcalli/nvim-colorizer.lua'
   use 'tjdevries/colorbuddy.nvim'
