@@ -1,1 +1,0 @@
-vim.cmd("colorscheme tempus_night")
