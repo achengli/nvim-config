@@ -14,5 +14,4 @@ This is my **neovim** working station that I'm using for software and notes.
 ---
 ## Snapshot
 ![neovim alacritty](assets/neovim_file.png)
-![neovim alacritty](assets/neovim_telescope.png)
 
