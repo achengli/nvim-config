@@ -3,4 +3,6 @@ examples
 pack
 plugged
 hello
+lazy-lock.json
+lazyvim.json
 *.~
