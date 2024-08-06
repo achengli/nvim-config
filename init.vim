@@ -5,7 +5,8 @@ for file in ['opt.vim', 'plug/init.vim', 'map.vim']
 endfor
 
 augroup NoBackgroundDefault
-  autocmd! ColorScheme * hi Normal guibg=none ctermbg=none | hi LineNr ctermbg=none guibg=none
+  autocmd! ColorScheme * hi Normal guibg=none ctermbg=none |
+  hi LineNr ctermbg=none guibg=none
 augroup END
 
 color modus_vivendi
