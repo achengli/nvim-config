@@ -13,6 +13,7 @@ defaults = {
   },
 extensions = {
   file_browser = {
+    theme = 'dropdown',
     }
   }
 }
