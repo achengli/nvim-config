@@ -11,4 +11,5 @@ augroup NoBackgroundDefault
   hi LineNr ctermbg=none guibg=none
   hi LineNrBelow guibg=none
   hi LineNrAbove guibg=none
+  hi StatusLine guibg=none
 augroup END
