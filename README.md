@@ -1,16 +1,8 @@
-# Lazy neovim configuration
+# Neovim setup
+My personal neovim configuration using vimscript preferably than lua because vimscript 
+has better integration with vim workflow *lua only works as an API client language*
 
-My neovim workflow using the lazy vim package manager and takuya matsuyama [craftzdog](https://github.com/craftzdog/dotfiles-public/tree/master) inspired.
+## Dependencies
+- vim Plug
 
-## Depends on
-
-- Treesitter
-- Lualine
-- modus and tempus themes
-- Lazy.nvim
-
----
-
-## Snapshot
-
-![neovim alacritty](assets/neovim_file.png)
+![neovim alacritty](assets/neovim_screenshot.png)
