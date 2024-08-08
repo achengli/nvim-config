@@ -14,6 +14,7 @@ defaults = {
 extensions = {
   file_browser = {
     theme = 'dropdown',
+    hidden = true,
     }
   }
 }

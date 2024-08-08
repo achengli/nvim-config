@@ -46,3 +46,11 @@ lspconfig.pyright.setup{
     }
   }
 }
+
+lspconfig.tsserver.setup {
+  init_options = {},
+  filetypes = {
+    'javascript',
+    'typescript',
+  }
+}
