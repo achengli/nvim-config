@@ -24,6 +24,11 @@ EOF
 
 hi TelescopeBorder guibg=none
 hi TelescopePromptBorder guibg=none
+<<<<<<< HEAD
 hi TelescopeResultsBorder guibg=none
 hi TelescopePromptTitle guibg=none
 hi TelescopeTitle guibg=none
+=======
+hi TelescopePreviewBorder guibg=none
+hi TelescopeResultsBorder guibg=none
+>>>>>>> b550503 (laptop commit)

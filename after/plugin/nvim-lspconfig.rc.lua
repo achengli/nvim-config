@@ -2,7 +2,8 @@ local lspconfig = require'lspconfig'
 local cap = require'cmp_nvim_lsp'.default_capabilities()
 
 lspconfig.vimls.setup{
-  capabilities = cap
+  capabilities = cap,
+  filetypes = 'vim',
 }
 
 lspconfig.lua_ls.setup{
@@ -34,14 +35,14 @@ lspconfig.lua_ls.setup{
   }
 }
 
-lspconfig.pyright.setup{
-  filetypes = {'python'},
+lspconfig.pylsp.setup {
   settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = 'openFilesOnly',
-        useLibraryCodeForTypes = true,
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391'},
+          maxLineLength = 100
+        }
       }
     }
   }
@@ -55,6 +56,7 @@ lspconfig.tsserver.setup {
   }
 }
 
+<<<<<<< HEAD
 lspconfig.rust_analyzer.setup {
   capabilities = cap,
   settings = {
@@ -76,4 +78,27 @@ lspconfig.clangd.setup{
     "--clang-tidy"
   },
   capabilities = cap
+=======
+lspconfig.astro.setup {}
+
+lspconfig.rust_analyzer.setup{
+  settings = {
+    ["rust-analyzer"] = {
+      imports = {
+        granularity = {
+          group = "module",
+        },
+        prefix = "self",
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+      },
+      procMacro = {
+        enable = true
+      },
+    }
+  }
+>>>>>>> b550503 (laptop commit)
 }

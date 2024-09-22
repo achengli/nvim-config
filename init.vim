@@ -4,7 +4,7 @@ for file in ['opt.vim', 'plug/init.vim', 'map.vim', 'lsp.vim', 'conf.vim']
   call util#source(file)
 endfor
 
-colorscheme modus_vivendi
+colorscheme modus
 
 hi Normal guibg=none ctermbg=none
 hi! link NormalFloat Normal
