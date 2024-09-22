@@ -12,7 +12,7 @@ cmp.setup{
     ['<C-j>'] = cmp.mapping.scroll_docs(2),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-a>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({select = true}),
+    ['<C-o>'] = cmp.mapping.confirm({select = true}),
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },

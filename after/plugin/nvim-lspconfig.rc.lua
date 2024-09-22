@@ -54,3 +54,26 @@ lspconfig.tsserver.setup {
     'typescript',
   }
 }
+
+lspconfig.rust_analyzer.setup {
+  capabilities = cap,
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = true,
+    },
+  },
+  filetypes = {
+    'rust',
+  },
+}
+
+lspconfig.clangd.setup{
+  cmd = {
+    "clangd",
+    "--function-arg-placeholders",
+    "--background-index",
+    "--suggest-missing-includes",
+    "--clang-tidy"
+  },
+  capabilities = cap
+}

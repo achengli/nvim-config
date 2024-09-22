@@ -21,3 +21,9 @@ extensions = {
 
 require'telescope'.load_extension'file_browser'
 EOF
+
+hi TelescopeBorder guibg=none
+hi TelescopePromptBorder guibg=none
+hi TelescopeResultsBorder guibg=none
+hi TelescopePromptTitle guibg=none
+hi TelescopeTitle guibg=none
