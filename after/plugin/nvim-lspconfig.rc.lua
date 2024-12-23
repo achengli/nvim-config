@@ -48,7 +48,7 @@ lspconfig.pylsp.setup {
   }
 }
 
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   init_options = {},
   filetypes = {
     'javascript',
@@ -56,7 +56,6 @@ lspconfig.tsserver.setup {
   }
 }
 
-<<<<<<< HEAD
 lspconfig.rust_analyzer.setup {
   capabilities = cap,
   settings = {
@@ -77,8 +76,14 @@ lspconfig.clangd.setup{
     "--suggest-missing-includes",
     "--clang-tidy"
   },
+  init_options = {
+    completion = {
+      placeholder = true,
+    },
+  },
   capabilities = cap
-=======
+}
+
 lspconfig.astro.setup {}
 
 lspconfig.rust_analyzer.setup{
@@ -100,5 +105,10 @@ lspconfig.rust_analyzer.setup{
       },
     }
   }
->>>>>>> b550503 (laptop commit)
+}
+
+lspconfig.jdtls.setup{}
+
+lspconfig.vhdl_ls.setup{
+  capabilities = cap,
 }
